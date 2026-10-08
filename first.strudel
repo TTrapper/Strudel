@@ -1,0 +1,45 @@
+$: stack(
+  cat(
+    note("b2  a3*2").s("sax_vib"),
+    note("c#3 d3*2 g3").s("sax_vib"),
+    stack(
+      note("d3 [e3 a4]*2 e4").s("piano"),
+      note("e4").s("sax_vib")
+    ).gain(0)
+  ).gain(1),
+  cat(
+    stack(
+      s("hh bd*4 oh").bank("microrhythmer12"),
+      s("bd [bd -]*3").bank("bossdr55")
+    ),
+    stack(
+     s("hh hh*16 oh").bank("microrhythmer12"),
+     s("bd bd").bank("bossdr55"),
+    )
+  ),
+  cat(
+      note("d4").s("gm_pad_new_age").tremolo("<3 2 3>"),
+      note("e4").s("gm_pad_new_age").tremolo("<5 2 6>"),
+      note("d4").s("gm_pad_new_age").tremolo("<3 4 3>"),
+      note("c#4").s("gm_pad_new_age").tremolo("<3 2 4>"),
+      stack(
+        note("a4").s("gm_sitar"),
+        note("g5").s("gm_sitar"),
+        note("c5").s("gm_sitar"),
+        note("d5").s("gm_pad_new_age"),
+      ),
+      stack(
+        note("e4").s("gm_sitar"),
+        note("g5").s("gm_sitar"),
+        note("b5").s("gm_sitar"),
+        note("g5").s("gm_pad_new_age"),
+      ).chorus(0.9),
+      stack(
+        note("b4").s("gm_sitar"),
+        note("c#6").s("gm_sitar"),
+        note("e5").s("gm_sitar"),
+        note("e5").s("gm_pad_new_age").slow(2),
+      ),
+      s("-"),
+  ).gain(1)
+)
